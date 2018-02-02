@@ -13,10 +13,9 @@ import com.jamesknights.common.service.impl.AbstractService;
 import com.jamesknights.common.user.model.User;
 import com.jamesknights.common.user.model.impl.UserImpl;
 import com.jamesknights.common.user.repository.UserRepository;
-import com.jamesknights.common.user.service.UserException;
 import com.jamesknights.common.user.service.UserService;
 import com.jamesknights.common.util.ServiceMessage;
-import jamesknights.common.password.service.PasswordService;
+import com.jamesknights.common.password.service.PasswordService;
 import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Resource;
@@ -25,9 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
-import org.junit.runner.RunWith;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -37,7 +34,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author James Knights <james@i-studio.co.uk>
  */
 @Service
-@RunWith(SpringRunner.class)
 @ContextConfiguration(
   classes = { JPAConfiguration.class }, 
   loader = AnnotationConfigContextLoader.class)
