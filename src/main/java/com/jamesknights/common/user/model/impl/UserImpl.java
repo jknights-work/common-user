@@ -17,6 +17,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.jboss.logging.Logger;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+
 /**
  *
  * @author James Knights <james@i-studio.co.uk>
@@ -30,11 +34,26 @@ public class UserImpl extends AbstractModelObject implements User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long uId;
+    
+    @Email
+    @Size(min = 3, message = "email address must be at least three characters")
     private String emailAddress;
+    
+    @NotNull
+    @Size(min = 3, message = "email address must be at least three characters")
     private String forename;
+    
+    @NotNull
+    @Size(min = 3, message = "email address must be at least three characters")
     private String lastname;
+    
+    @NotNull
+    @Size(min = 7, message = "email address must be at least three characters")
     private String password;
+    
     private LocalDateTime created;
+    
+    @NotNull
     private boolean isEnabled;
     
     public UserImpl () {}
